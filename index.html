@@ -1,0 +1,107 @@
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+   body{
+    background-color: #FF0000;
+     height: 100vh;
+     display: flex;
+     align-itmes: center;
+     justify-content: center;
+    }
+    .container { 
+      padding: 20px;
+      text-align: center;
+      width: 50%; /*Make the message box bigger */
+    }
+
+    .message {
+      display: none;
+      padding: 20px;
+      background-color: white;
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .message p {
+      font-size: 40px;
+      margin: 10px 0;
+    }
+
+    .btn {
+      padding: 20px 40px;
+      background-color: #f44336;
+      color: white;
+      border-radius: 5px;
+      text-decoration: none;
+      margin: 10px;
+      font-size: 25px;
+    }
+
+    .message-1 {
+      color: #f44336;
+    }
+
+    .message-2 {
+      color: #4caf50;
+    }
+
+    .message-3 {
+      color: #3f51b5;
+    }
+
+    .message-4 {
+      color: #ff5722;
+    }
+
+    .message-5 {
+      color: #9c27b0;
+    }
+ </style>
+</head>
+<body>
+  <div class="container">
+    <h1 style="font-size: 65px;">Happy Valentine's Day!</h1>
+    <p style="font-size: 30px;">Click the button to see a message:</p>
+    <button class="toggleBtn" style="font-size: 26px;"> Show Message </button>
+    <div class="message message-1">
+      <p>
+        Love is a beautiful and powerful thing, and it comes in many forms. 
+      </p>
+    </div>
+    <div class="message message-2">
+      <p>
+        Whether you're single or in a relationship, cherish the love in your life. 
+      </p>
+    </div>
+    <div class="message message-3">
+      <p>
+        Love yourself, love your family, love your friends, and never stop searching for love in all its forms.
+      </p>
+    </div>
+    <div class="message message-4">
+      <p>
+        You are deserving of love and happiness, and it's never too late to find it. 
+      </p>
+    </div>
+    <div class="message message-5">
+      <p>
+        Happy Valentine's Day! Spread love and positivity to everyone you meet today and always.
+      </p>
+    </div>
+  </div>
+  <script>
+   const toggleBtn = document.querySelector(".toggleBtn");
+   const messages = document.querySelectorAll(".message");
+
+     let currentMessage = 0;
+    messages[currentMessage].style.display = "block";
+
+    toggleBtn.addEventListener("click", function() {
+      messages[currentMessage].style.display = "none";
+      currentMessage = (currentMessage + 1) % messages.length;
+      messages[currentMessage].style.display = "block";
+    });
+  </script>
+</body>
+</html>
