@@ -1,18 +1,11 @@
 <html>
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-   body{
-    background-color: #FF0000;
-     height: 100vh;
-     display: flex;
-     align-itmes: center;
-     justify-content: center;
-    }
-    .container { 
+    .container {
+      background-color: #ffb6c1;
+      height: 100vh; /* make the container full screen */
       padding: 20px;
       text-align: center;
-      width: 50%; /*Make the message box bigger */
     }
 
     .message {
@@ -24,7 +17,7 @@
     }
 
     .message p {
-      font-size: 40px;
+      font-size: 18px;
       margin: 10px 0;
     }
 
@@ -35,7 +28,7 @@
       border-radius: 5px;
       text-decoration: none;
       margin: 10px;
-      font-size: 25px;
+      font-size: 18px;
     }
 
     .message-1 {
@@ -57,13 +50,13 @@
     .message-5 {
       color: #9c27b0;
     }
- </style>
+  </style>
 </head>
 <body>
   <div class="container">
-    <h1 style="font-size: 65px;">Happy Valentine's Day!</h1>
-    <p style="font-size: 30px;">Click the button to see a message:</p>
-    <button class="toggleBtn" style="font-size: 26px;"> Show Message </button>
+    <h1>Happy Valentine's Day!</h1>
+    <p>Click the button to see a message:</p>
+    <button class="toggleBtn"> Show Message </button>
     <div class="message message-1">
       <p>
         Love is a beautiful and powerful thing, and it comes in many forms. 
@@ -91,17 +84,19 @@
     </div>
   </div>
   <script>
-   const toggleBtn = document.querySelector(".toggleBtn");
-   const messages = document.querySelectorAll(".message");
+    const toggleBtn = document.querySelector(".toggleBtn");
+    const messages = document.querySelectorAll(".message");
 
-     let currentMessage = 0;
+    let currentMessage = 0;
     messages[currentMessage].style.display = "block";
 
     toggleBtn.addEventListener("click", function() {
+      if (currentMessage === 4) {
+        return;
+      }
       messages[currentMessage].style.display = "none";
       currentMessage = (currentMessage + 1) % messages.length;
       messages[currentMessage].style.display = "block";
     });
   </script>
 </body>
-</html>
